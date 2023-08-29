@@ -1,0 +1,22 @@
+<h1>Enter information for a New Director</h1>
+
+<%= form_with url: "/directors", method: :post, data: { turbo: false } do |form| %>
+  <div>
+    <%= form.label :name, 'Director Name:' %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :age, 'Director Age:' %>
+    <%= form.text_field :age %>
+  </div>
+  <div>
+    <%= form.label :alive, 'Director Alive' %>
+    <%= form.radio_button :alive, 'true' %> True
+    <%= form.radio_button :alive, 'false' %> False
+  </div>
+  <div>
+    <%= form.submit 'Create Director' %>
+  </div>
+<% end %>
+
+

@@ -1,10 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe 'the movies index page' do
+
+  before(:each) do
   @director_1 = Director.create!(name: "bob",age: 5, alive:true)
   @movie_1 = @director_1.movies.create!(name: "bobs movie", length: 70, in_theaters: false)
   @movie_2 = @director_1.movies.create!(name: "bobs movie_2", length: 700, in_theaters: true)
   @movie_3 = @director_1.movies.create!(name: "bobs movie_3", length: 40, in_theaters: true)
+  end
 
     # User Story 3, Child Index 
 
@@ -15,7 +18,6 @@ RSpec.describe 'the movies index page' do
 
   it 'displays the movies and attributs' do
     visit '/movies'
-    save_and_open_page
     expect(page).to have_content("bobs movie")
     expect(page).to have_content(70)
     expect(page).to have_content(false)

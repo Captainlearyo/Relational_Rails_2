@@ -35,4 +35,26 @@ RSpec.describe 'the directors show page' do
     expect(page).to_not have_content(false)
   end
 
+
+  #   User Story 7, Parent Child Count
+  # As a visitor
+  # When I visit a parent's show page
+  # I see a count of the number of children associated with this parent
+
+  it 'displays the directors movie count' do
+    visit "/directors/#{@director_1.id}"
+    expect(page).to have_content(3)
+  end
+
+  #   User Story 10, Parent Child Index Link
+  # As a visitor
+  # When I visit a parent show page ('/parents/:id')
+  # Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
+  it "I see a link to take me to that parents child_table_name" do
+    visit "/directors/#{@director_1.id}"
+    expect(page).to have_content("Directors Movies")
+    click_on "Directors Movies"
+    expect(current_path).to eq("/directors/#{@director_1.id}/movies")
+  end
+
 end

@@ -1,4 +1,7 @@
 <h1> Directors </h1>
+<p><%= link_to "New Director", "/directors/new" %></p>
 <% @directors.each do |director| %>
 <h3> <%= director.name %></h3>
+<p>Date created: <%= director.created_at %></p>
+<p><%= link_to "Director Show Page", "/directors/#{director.id}" %></p>
 <% end  %> 

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'the movies show page' do
 
-  before do
+  before(:each) do
   @director_1 = Director.create!(name: "bob",age: 5, alive:true)
   @movie_1 = @director_1.movies.create!(name: "bobs movie", length: 70, in_theaters: false)
   @movie_2 = @director_1.movies.create!(name: "bobs movie_2", length: 700, in_theaters: true)

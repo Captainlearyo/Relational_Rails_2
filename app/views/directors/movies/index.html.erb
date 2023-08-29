@@ -1,0 +1,7 @@
+<h1> <%= @director.name %>'s Movies </h1>
+<% @director.movies.each do |movie| %>
+  <h3> ID <%= movie.id  %> </h3>
+  <p>Name <%= movie.name  %> </p>
+  <p>Length <%= movie.length  %> </p>
+  <p>In Theaters <%= movie.in_theaters  %> </p>
+<% end  %> 

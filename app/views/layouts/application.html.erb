@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RelationalRails2</title>
+    <title>John's Movie Club</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,11 @@
   </head>
 
   <body>
+  <h1>John's Movie Club</h1>
+  <div id="header">
+  <p><%= link_to "All Movies", "/movies" %></p>
+  <p><%= link_to "All Directors", "/directors" %></p>
+</div>
     <%= yield %>
   </body>
 </html>
