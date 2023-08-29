@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'the directors edit page' do
 
-  before do
+  before(:each) do
   @director_1 = Director.create!(name: "bob",age: 5, alive:true)
   @movie_1 = @director_1.movies.create!(name: "bobs movie", length: 70, in_theaters: false)
   @movie_2 = @director_1.movies.create!(name: "bobs movie_2", length: 700, in_theaters: true)
@@ -42,7 +42,6 @@ RSpec.describe 'the directors edit page' do
   it "has a from to fill out information  " do
     visit "/directors/#{@director_1.id}/edit"
 
-    save_and_open_page
     expect(page).to have_content("Edit Director")
     expect(page).to have_field("Director Name")
     expect(page).to have_field("Age")
@@ -54,6 +53,5 @@ RSpec.describe 'the directors edit page' do
     click_on 'Update Director'
     expect(current_path).to eq("/directors/#{@director_1.id}")
     expect(page).to have_content("peter")
-    save_and_open_page
   end
 end

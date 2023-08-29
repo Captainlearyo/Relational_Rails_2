@@ -1,0 +1,20 @@
+<h3>Edit Movie</h3>
+
+<%= form_with url: "/movies/#{@movie.id}", method: :patch, data: { turbo: false } do |form| %>
+  <div>
+    <%= form.label :name, 'Movie Name:' %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :length, 'Movie Length:' %>
+    <%= form.text_field :length %>
+  </div>
+  <div>
+    <%= form.label :in_theaters, 'In Theaters' %>
+    <%= form.radio_button :in_theaters, 'true' %> True
+    <%= form.radio_button :in_theaters, 'false' %> False
+  </div>
+  <div>
+    <%= form.submit 'Update Movie' %>
+  </div>
+<% end %>

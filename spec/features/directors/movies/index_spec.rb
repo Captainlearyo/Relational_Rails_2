@@ -34,4 +34,20 @@ RSpec.describe 'the directors movie index page' do
 
     expect(page).to_not have_content("sals movie_4")
   end
+
+#   User Story 16, Sort Parent's Children in Alphabetical Order by name 
+# As a visitor
+# When I visit the Parent's children Index Page
+# Then I see a link to sort children in alphabetical order
+# When I click on the link
+# I'm taken back to the Parent's children Index Page where I see all of the parent's children in alphabetical order
+  it "has a link to sort movies alphabetically" do
+    visit "/directors/#{@director_1.id}/movies"
+
+    
+    click_link("Alphabetize")
+    
+    expect(current_path).to eq("/directors/#{@director_1.id}/movies")
+
+  end
 end

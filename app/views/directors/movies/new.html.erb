@@ -1,0 +1,22 @@
+<h1>Enter information for a New Movie</h1>
+
+<%= form_with url: "/directors/#{@director.id}/movies", method: :post, data: { turbo: false } do |form| %>
+  <div>
+    <%= form.label :name, 'Movie Name:' %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :length, 'Movie Length:' %>
+    <%= form.text_field :length %>
+  </div>
+  <div>
+    <%= form.label :alive, 'In Theaters Alive' %>
+    <%= form.radio_button :in_theaters, 'true' %> True
+    <%= form.radio_button :in_theaters, 'false' %> False
+  </div>
+  <div>
+    <%= form.submit 'Create Movie' %>
+  </div>
+<% end %>
+
+

@@ -1,6 +1,7 @@
 <h1> Movies </h1>
-<% @movies.each do |movie| %>
-<h3> <%= movie.name %></h3>
-<h3> <%= movie.length %></h3>
-<h3> <%= movie.in_theaters %></h3>
-<% end  %> 
+<% @movies.in_theaters_filter.each do |movie| %>
+  <h3> <%= movie.name %></h3>
+  <h3> <%= movie.length %></h3>
+  <h3> <%= movie.in_theaters %></h3>
+  <p><%= link_to "Movie Show Page", "/movies/#{movie.id}" %></p>
+<% end  %>  

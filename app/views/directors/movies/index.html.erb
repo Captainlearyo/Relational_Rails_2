@@ -5,3 +5,5 @@
   <p>Length <%= movie.length  %> </p>
   <p>In Theaters <%= movie.in_theaters  %> </p>
 <% end  %> 
+<%= link_to "Alphabetize", "/directors/#{@director.id}/movies?sort=alpha" %><br>
+<p><%= link_to "New Movie", "/directors/#{@director.id}/movies/new" %></p>
