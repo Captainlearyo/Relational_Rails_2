@@ -6,3 +6,4 @@
 <p>Alive <%= @director.alive  %> </p>
 <p><%= link_to "Directors Movies", "/directors/#{@director.id}/movies"   %> </p>
 <p><%= link_to "Update Director", "/directors/#{@director.id}/edit" %></p>
+<p><%= link_to "Delete #{@director.name}", "/directors/#{@director.id}", method: :delete %></p>

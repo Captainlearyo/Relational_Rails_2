@@ -56,5 +56,41 @@ RSpec.describe 'the directors show page' do
     click_on "Directors Movies"
     expect(current_path).to eq("/directors/#{@director_1.id}/movies")
   end
+  
+  #   User Story 19, Parent Delete 
+# As a visitor
+# When I visit a parent show page
+# Then I see a link to delete the parent
+# When I click the link "Delete Parent"
+# Then a 'DELETE' request is sent to '/parents/:id',
+# the parent is deleted, and all child records are deleted
+# and I am redirected to the parent index page where I no longer see this parent
+
+it "has a link to delete the director" do
+  visit "/directors/#{@director_1.id}"
+
+  expect(@director_1).to be_a(Director)
+  expect(page).to have_content("Delete bob")
+  click_link("Delete bob")
+
+  expect(current_path).to eq("/directors")
+  expect(page).to_not have_content("bob")
+end
+
+it "deletes all associated products when a director is deleted" do
+  visit "/movies"
+  expect(page).to have_content("bobs movie")
+  expect(page).to have_content("bobs movie_2")
+  expect(page).to have_content("bobs movie_3")
+  
+  visit "/directors/#{@director_1.id}"
+  click_link("Delete bob")
+
+  visit "/directors"
+
+  expect(page).to_not have_content("bobs movie")
+  expect(page).to_not have_content("bobs movie_2")
+  expect(page).to_not have_content("bobs movie_3")
+end
 
 end

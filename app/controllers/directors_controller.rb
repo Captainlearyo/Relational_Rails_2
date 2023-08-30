@@ -37,4 +37,12 @@ class DirectorsController < ApplicationController
     redirect_to "/directors/#{director.id}"
     
   end
+
+  def destroy 
+    Director.destroy(params[:id])
+
+    redirect_to "/directors"
+  end
+
+  
 end

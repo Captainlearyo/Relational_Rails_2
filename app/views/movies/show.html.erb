@@ -2,3 +2,4 @@
 <p>Length <%= @movie.length  %> </p>
 <p>In Theater <%= @movie.in_theaters  %> </p>
 <p><%= link_to "Update Movie", "/movies/#{@movie.id}/edit" %></p>
+<p><%= link_to "Delete #{@movie.name}", "/movies/#{@movie.id}", method: :delete %></p>

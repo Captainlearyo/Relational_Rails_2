@@ -95,4 +95,6 @@ RSpec.describe 'the directors index page' do
 
     expect(current_path).to eq("/directors/#{@director_1.id}/edit")
   end
+
+  
 end

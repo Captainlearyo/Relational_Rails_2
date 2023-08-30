@@ -22,7 +22,5 @@ class Directors::MoviesController < ApplicationController
     director.save
     redirect_to "/directors/#{director.id}/movies"
   end
-
-
   
 end

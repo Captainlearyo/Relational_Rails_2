@@ -1,0 +1,78 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/clayo/Web-Dev/2-Mod/Relational_Rails/Relational_Rails_2/app/models/director.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/clayo/Web-Dev/2-Mod/Relational_Rails/Relational_Rails_2/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/clayo/Web-Dev/2-Mod/Relational_Rails/Relational_Rails_2/app/models/movie.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/clayo/Web-Dev/2-Mod/Relational_Rails/Relational_Rails_2/app/controllers/directors/movies_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          1,
+          0,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/clayo/Web-Dev/2-Mod/Relational_Rails/Relational_Rails_2/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      }
+    },
+    "timestamp": 1693411501
+  }
+}

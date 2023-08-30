@@ -31,4 +31,28 @@ RSpec.describe 'the movies show page' do
     expect(page).to have_content(false)
   end
 
+  #   User Story 20, Child Delete 
+# As a visitor
+# When I visit a child show page
+# Then I see a link to delete the child "Delete Child"
+# When I click the link
+# Then a 'DELETE' request is sent to '/child_table_name/:id',
+# the child is deleted,
+# and I am redirected to the child index page where I no longer see this child
+
+
+  it "has a link to delete the movie" do
+    visit "/movies"
+
+    expect(page).to have_content("bobs movie_2")
+
+    visit "/movies/#{@movie_2.id}"
+
+    expect(page).to have_content("Delete bobs movie_2")
+    click_link("Delete bobs movie_2")
+
+    expect(current_path).to eq("/movies")
+    expect(page).to_not have_content("bobs movie_2")
+  end
+
 end
