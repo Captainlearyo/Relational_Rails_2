@@ -78,5 +78,21 @@ RSpec.describe 'the directors index page' do
       expect(current_path).to eq("/directors")
     end
   end
+  # User Story 17, Parent Update From Parent Index Page 
+  # As a visitor
+  # When I visit the parent index page
+  # Next to every parent, I see a link to edit that parent's info
+  # When I click the link
+  # I should be taken to that parent's edit page where I can update its information just like in User Story 12
+  it "has a link by each director to edit that director" do
+    visit "/directors"
 
+    expect(page).to have_content("Edit bob")
+    expect(page).to have_content("Edit sal")
+    expect(page).to have_content("Edit dan")
+  
+    click_link("Edit bob")
+
+    expect(current_path).to eq("/directors/#{@director_1.id}/edit")
+  end
 end

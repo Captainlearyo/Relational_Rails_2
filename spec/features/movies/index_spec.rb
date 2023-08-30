@@ -89,4 +89,22 @@ RSpec.describe 'the movies index page' do
     expect(page).to have_content("dans movie_2")
     expect(page).to_not have_content("dans movie_3")
   end
+
+#   User Story 18, Child Update From Childs Index Page 
+# As a visitor
+# When I visit the `child_table_name` index page or a parent `child_table_name` index page
+# Next to every child, I see a link to edit that child's info
+# When I click the link
+# I should be taken to that `child_table_name` edit page where I can update its information just like in User Story 14
+it "has a link to edit each movie" do
+  visit "/movies" 
+
+  expect(page).to have_content("Edit bobs movie")
+  expect(page).to have_content("Edit sals movie")
+  expect(page).to have_content("Edit dans movie")
+
+  click_link("Edit bobs movie_2")
+
+  expect(current_path).to eq("/movies/#{@movie_2.id}/edit")
+end
 end
